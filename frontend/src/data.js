@@ -2,7 +2,7 @@ export const data = {
   products: [
     {
       name: 'Nike Slim shirt',
-      slug: 'Nike-slim-shirt',
+      slug: 'nike-slim-shirt',
       category: 'Shirts',
       image: '/images/p1.jpg',
       price: 120,
