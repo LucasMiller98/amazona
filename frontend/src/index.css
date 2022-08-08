@@ -15,6 +15,15 @@ main { /* Ocupa uma área entre o header e o footer na tela */
   flex: 1;
 }
 
+.btn-primary {
+  background: #f0c040;
+  color: #000 ;
+}
+
+.rating span {
+  color: #ffc000;
+}
+
 .products {
   display: flex;
   flex-wrap: wrap;
