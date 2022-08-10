@@ -1,10 +1,12 @@
-import { object, array, bool } from 'prop-types'
-import { useEffect, useReducer } from 'react'
-import { Product }  from '../components/Product'
 import axios from 'axios';
-import logger from 'use-reducer-logger'
+import { array, bool, object } from 'prop-types';
+import { useEffect, useReducer } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Helmet } from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async';
+import logger from 'use-reducer-logger';
+import { LoadingBox } from '../components/LoadingBox';
+import { MessageBox } from '../components/MessageBox'
+import { Product } from '../components/Product';
 
 const reducer = (state, action) => {
   switch(action.type) {
@@ -60,9 +62,9 @@ export function HomeScreen() {
         { 
           
           loading ? (
-            <div>Loading ...</div>
+            <LoadingBox />
           ): error ? (
-            <div>{ error }</div>
+            <MessageBox variant='danger'>{ error }</MessageBox>
           ): (
             <Row>
               {products.map(product => (
