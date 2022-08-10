@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { object } from 'prop-types'
+import { object, string } from 'prop-types'
 
 class ErrorBoundary extends Component {
   state = {
@@ -25,7 +25,8 @@ class ErrorBoundary extends Component {
 }
 
 ErrorBoundary.propTypes = {
-  state: object
+  state: object,
+  children: object
 }
 
 export { ErrorBoundary }

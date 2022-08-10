@@ -1,5 +1,5 @@
 import { Alert } from 'react-bootstrap'
-import { object } from 'prop-types'
+import { string } from 'prop-types'
 
 export function MessageBox(props) {
 
@@ -9,5 +9,6 @@ export function MessageBox(props) {
 }
 
 MessageBox.propTypes = {
-  props: object
+  variant: string,
+  children: string
 }

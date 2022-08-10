@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { object } from 'prop-types'
 import { useEffect, useReducer } from 'react'
 import { 
   Badge, 
@@ -133,8 +132,4 @@ export function ProductScreen() {
       </Row>
     </div>
   )
-}
-
-ProductScreen.propTypes = {
-  product: object
 }

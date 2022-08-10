@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { array, bool } from 'prop-types';
 import { useEffect, useReducer } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
@@ -19,10 +18,6 @@ const reducer = (state, action) => {
     default:
       return state
   }
-}
-
-reducer.propTypes = {
-  loading: bool
 }
 
 export function HomeScreen() {
@@ -79,10 +74,4 @@ export function HomeScreen() {
       </div>
     </div>
   );
-}
-
-
-HomeScreen.propTypes = {
-  products: array ,
-  loading: bool
 }
