@@ -6,15 +6,18 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { HelmetProvider } from 'react-helmet-async'
 import { ErrorBoundary } from './components/error-boundary'
+import { StoreProvider } from './Store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HelmetProvider>
+    <StoreProvider>
       <ErrorBoundary>
-        <App />
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
       </ErrorBoundary>
-    </HelmetProvider>
+    </StoreProvider>
   </React.StrictMode>
 );
 
