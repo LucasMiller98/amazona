@@ -58,7 +58,7 @@ export function ProductScreen() {
     fetchData()
   }, [slug])
 
-  const { state, dispatch: ctxDispatch } = useContext(Store)
+  const { _, dispatch: ctxDispatch } = useContext(Store)
   
   const addToCartHandler = () => {
     ctxDispatch({ 
