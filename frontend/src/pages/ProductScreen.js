@@ -13,6 +13,9 @@ import {
 
 import { Helmet } from 'react-helmet-async' 
 import { useParams } from 'react-router-dom'
+import { getError } from '../utils'
+import { LoadingBox } from '../components/LoadingBox'
+import { MessageBox } from '../components/MessageBox'
 import { Rating } from '../components/Rating'
 
 const reducer = (state, action) => {
@@ -52,7 +55,7 @@ export function ProductScreen() {
 
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data })
       }catch(error) {
-        dispatch({ type: 'FETCH_FAIL', payload: error.message })
+        dispatch({ type: 'FETCH_FAIL', payload: getError(error) })
         
       }
       // setProducts(result.data)
@@ -62,9 +65,9 @@ export function ProductScreen() {
   }, [slug])
   
   return loading ? (
-    <div>Loading...</div>
+    <LoadingBox />
   ): error ? (
-    <div>{ error }</div>
+    <MessageBox variant='danger'>{ error }</MessageBox>
   ): (
     <div>
       <Row>
