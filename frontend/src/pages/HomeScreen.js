@@ -3,6 +3,7 @@ import { array, bool } from 'prop-types';
 import { useEffect, useReducer } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
+import logger from 'use-reducer-logger';
 import { LoadingBox } from '../components/LoadingBox';
 import { MessageBox } from '../components/MessageBox'
 import { Product } from '../components/Product';
@@ -26,7 +27,7 @@ reducer.propTypes = {
 
 export function HomeScreen() {
 
-  const [{ loading, error, products }, dispatch] = useReducer(reducer, {
+  const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
     products: [],
     loading: true,
     error: ''
