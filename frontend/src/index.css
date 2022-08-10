@@ -43,3 +43,7 @@ main { /* Ocupa uma área entre o header e o footer na tela */
 .product-info {
   padding: 1rem;
 }
+
+.img-large {
+  max-width: 100%;
+}

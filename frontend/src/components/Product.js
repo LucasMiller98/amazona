@@ -6,7 +6,6 @@ import { Rating } from './Rating'
 export function Product(props) {
 
   const { product } = props
-  console.log(product)
 
   return (
     <Card>
