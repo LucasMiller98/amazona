@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { bool, object } from 'prop-types'
+import { object } from 'prop-types'
 import { useEffect, useReducer } from 'react'
 import { 
   Badge, 
