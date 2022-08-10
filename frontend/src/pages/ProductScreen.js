@@ -31,10 +31,6 @@ const reducer = (state, action) => {
   }
 }
 
-reducer.propTypes = {
-  loading: bool
-}
-
 export function ProductScreen() {
   const params = useParams()
   const { slug } = params

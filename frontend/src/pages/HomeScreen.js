@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { array, bool, object } from 'prop-types';
+import { array, bool } from 'prop-types';
 import { useEffect, useReducer } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
-import logger from 'use-reducer-logger';
 import { LoadingBox } from '../components/LoadingBox';
 import { MessageBox } from '../components/MessageBox'
 import { Product } from '../components/Product';
@@ -83,7 +82,6 @@ export function HomeScreen() {
 
 
 HomeScreen.propTypes = {
-  data: object,
   products: array ,
   loading: bool
 }
