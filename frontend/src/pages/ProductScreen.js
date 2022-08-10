@@ -1,7 +1,15 @@
 import axios from 'axios'
 import { bool, object } from 'prop-types'
 import { useEffect, useReducer } from 'react'
-import { Badge, Card, Col, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
+import { 
+  Badge, 
+  Card, 
+  Col, 
+  ListGroup, 
+  ListGroupItem, 
+  Row 
+} from 'react-bootstrap'
+
 import { useParams } from 'react-router-dom'
 import { Rating } from '../components/Rating'
 
