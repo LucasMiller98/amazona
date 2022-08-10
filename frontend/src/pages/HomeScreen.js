@@ -1,10 +1,10 @@
-// import { data } from '../data';
 import { object, array, bool } from 'prop-types'
 import { useEffect, useReducer } from 'react'
 import { Product }  from '../components/Product'
 import axios from 'axios';
 import logger from 'use-reducer-logger'
 import { Col, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async'
 
 const reducer = (state, action) => {
   switch(action.type) {
@@ -24,7 +24,6 @@ reducer.propTypes = {
 }
 
 export function HomeScreen() {
-  // const { products } = data
 
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
     products: [],
@@ -32,7 +31,6 @@ export function HomeScreen() {
     error: ''
   })
   
-  // const [products, setProducts] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,7 +43,6 @@ export function HomeScreen() {
         dispatch({ type: 'FETCH_FAIL', payload: error.message })
         
       }
-      // setProducts(result.data)
     }
 
     fetchData()
@@ -53,6 +50,9 @@ export function HomeScreen() {
   
   return (
     <div>
+      <Helmet>
+        <title>Amazona</title>
+      </Helmet>
       <h1>Featured Products</h1>
 
       <div className='products'>

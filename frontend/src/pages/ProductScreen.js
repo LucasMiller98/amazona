@@ -3,6 +3,7 @@ import { bool, object } from 'prop-types'
 import { useEffect, useReducer } from 'react'
 import { 
   Badge, 
+  Button, 
   Card, 
   Col, 
   ListGroup, 
@@ -10,6 +11,7 @@ import {
   Row 
 } from 'react-bootstrap'
 
+import { Helmet } from 'react-helmet-async' 
 import { useParams } from 'react-router-dom'
 import { Rating } from '../components/Rating'
 
@@ -76,7 +78,9 @@ export function ProductScreen() {
         <Col md={3}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h1>{ product.name }</h1>
+              <Helmet>
+                <title>{ product.name }</title>
+              </Helmet>
             </ListGroup.Item>
           </ListGroup>
           <Rating 
@@ -105,8 +109,8 @@ export function ProductScreen() {
                   <Row>
                     <Col>Status:</Col>
                     <Col>
-                      ${product.countInStock > 0 ? (
-                        <Badge bg="success">Product in Stock</Badge>
+                      {product.countInStock > 0 ? (
+                        <Badge bg="success">in Stock</Badge>
                       ):(
                         <Badge bg='danger'>Unavailable</Badge>
                       )}
@@ -114,18 +118,15 @@ export function ProductScreen() {
                   </Row>
                 </ListGroupItem>
 
-                <ListGroupItem>
-                  <Row>
-                    <Col>Status:</Col>
-                    <Col>
-                      ${product.countInStock > 0 ? (
-                        <Badge bg="success">Product in Stock</Badge>
-                      ):(
-                        <Badge bg='danger'>Unavailable</Badge>
-                      )}
-                    </Col>
-                  </Row>
-                </ListGroupItem>
+                {product.countInStock > 0 && (
+                  <ListGroup.Item>
+                    <div className='d-grid'>
+                      <Button variant='primary'>
+                        Add to Cart
+                      </Button>
+                    </div>
+                  </ListGroup.Item>
+                )}
               </ListGroup>
             </Card.Body>
           </Card>
