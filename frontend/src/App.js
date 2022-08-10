@@ -29,7 +29,7 @@ export function App() {
                   Cart
                   { cart.cartItem.length > 0 && (
                     <Badge pill bg='danger'>
-                      { cart.cartItem.length }
+                      { cart.cartItem.reduce((a, c) => a + c.quantity, 0) }
                     </Badge>
                   ) }                  
                 </Link>
